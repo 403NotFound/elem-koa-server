@@ -32,10 +32,14 @@ class UserController {
     ctx.body = { token }
   }
   // checkOwner
-  checkOwner () {}
+  checkOwner () {
+    console.log(111)
+  }
 
   //update
-  update () {}
+  update () {
+    console.log(222)
+  }
 }
 
 export default new UserController()
