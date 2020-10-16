@@ -20,7 +20,6 @@ class UserController {
     }
     // 登录接口
     async login(ctx) {
-        console.log(ctx.state);
         ctx.verifyParams({
             username: { type: 'string', required: true },
             password: { type: 'string', required: true }
@@ -33,9 +32,5 @@ class UserController {
         const token = jwt.sign({ _id, username }, config_1.secret, { expiresIn: '1d' });
         ctx.body = { token };
     }
-    // checkOwner
-    checkOwner() { }
-    //update
-    update() { }
 }
 exports.default = new UserController();

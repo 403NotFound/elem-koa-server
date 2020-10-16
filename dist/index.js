@@ -14,6 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Koa = require("koa");
 const routes_1 = require("./routes");
 const users_1 = require("./routes/users");
+const tags_1 = require("./routes/tags");
 const mongoose = require("mongoose");
 const error = require("koa-json-error");
 const parameter = require("koa-parameter");
@@ -37,6 +38,7 @@ app.use(koaBody());
 // 路由中间件
 app.use(routes_1.default);
 app.use(users_1.default);
+app.use(tags_1.default);
 // 参数校验中间件
 app.use(parameter(app));
 app.listen(7001, () => {
