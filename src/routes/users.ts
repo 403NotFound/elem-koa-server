@@ -4,7 +4,7 @@ import * as jwt from 'koa-jwt'
 import { secret } from '../config'
 
 const router = new Router({ prefix: '/users' })
-const { create, login, checkOwner, update } = Users
+const { create, login } = Users
 
 // 对路由中的 token 进行检查
 const auth = jwt({ secret })
@@ -12,8 +12,6 @@ const auth = jwt({ secret })
 router.post('/', create)
 // 登录
 router.post('/login', login)
-// 更新用户信息
-router.patch('/:id', auth, checkOwner, update)
 
 
 export default router.routes()

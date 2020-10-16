@@ -20,7 +20,6 @@ class UserController {
   }
   // 登录接口
   async login (ctx) {
-    console.log(ctx.state);
     ctx.verifyParams({
       username: { type: 'string', required: true },
       password: { type: 'string', required: true }
@@ -30,15 +29,6 @@ class UserController {
     const { _id, username } = user
     const token = jwt.sign({ _id, username }, secret, {expiresIn: '1d'})
     ctx.body = { token }
-  }
-  // checkOwner
-  checkOwner () {
-    console.log(111)
-  }
-
-  //update
-  update () {
-    console.log(222)
   }
 }
 

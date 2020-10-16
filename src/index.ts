@@ -1,6 +1,7 @@
 import * as Koa from 'koa'
 import router from './routes'
 import userRoute from './routes/users'
+import tagRoute from './routes/tags'
 import * as mongoose from 'mongoose'
 import * as error from 'koa-json-error'
 import * as parameter from 'koa-parameter'
@@ -25,6 +26,7 @@ app.use(koaBody())
 // 路由中间件
 app.use(router)
 app.use(userRoute)
+app.use(tagRoute)
 
 // 参数校验中间件
 app.use(parameter(app))
