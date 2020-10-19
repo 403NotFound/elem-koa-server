@@ -30,6 +30,10 @@ class UserController {
     const token = jwt.sign({ _id, username }, secret, {expiresIn: '1d'})
     ctx.body = { token }
   }
+  // 获取个人信息接口
+  async userInfo (ctx) {
+    const user:any= await User.find()
+  }
 }
 
 export default new UserController()
